@@ -5,7 +5,7 @@ import { Navbar } from '../components/Navbar';
 export function Landing() {
   return (
     <div className="min-h-screen bg-surface">
-      <Navbar showUserProfile={false} showLinks={true} />
+      <Navbar showUserProfile={false} showLinks={true} forceLight />
       <main className="pt-16">
         <section className="relative min-h-[795px] flex items-center justify-center overflow-hidden px-margin-mobile md:px-margin-desktop py-20">
           <div className="absolute inset-0 z-0">

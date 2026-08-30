@@ -99,12 +99,12 @@ export function Sidebar() {
         <p className="text-center font-label-sm text-label-sm text-white/40 mt-2">ExamGuard v2.4.0</p>
       </div>
     </aside>
-    <nav className="fixed left-0 right-0 top-0 z-40 grid grid-cols-2 gap-2 border-b border-white/15 bg-[#10243d] p-3 md:hidden">
+    <nav className="fixed left-0 right-0 top-0 z-40 grid grid-cols-2 gap-2 border-b border-outline-variant bg-surface-container-lowest p-3 md:hidden">
       {menuItems.map((item) => (
         <Link
           key={item.label}
           to={item.href}
-            className={`flex min-w-0 items-center gap-2 rounded-lg px-3 py-2 text-xs font-bold ${isActive(item.href) ? 'bg-primary-container text-on-primary-container' : 'text-white/75 hover:bg-white/10 hover:text-white'}`}
+            className={`flex min-w-0 items-center gap-2 rounded-lg px-3 py-2 text-xs font-bold ${isActive(item.href) ? 'bg-primary-container text-on-primary-container' : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'}`}
         >
           <span className="material-symbols-outlined text-base">{item.icon}</span>
           <span className="truncate">{item.label}</span>

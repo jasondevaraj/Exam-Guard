@@ -44,19 +44,19 @@ export function Navbar({ showUserProfile = true, showLinks = true, dark = false,
       {showLinks && (
         <nav className="hidden md:flex gap-8">
           <Link
-            className={`${dark ? 'text-primary-fixed border-primary-fixed' : 'text-primary dark:text-inverse-primary border-primary dark:border-inverse-primary'} font-bold border-b-2 pb-1 font-label-md text-label-md`}
+            className={`${dark ? 'text-primary-fixed border-primary-fixed' : forceLight ? 'text-primary border-primary' : 'text-primary dark:text-inverse-primary border-primary dark:border-inverse-primary'} font-bold border-b-2 pb-1 font-label-md text-label-md`}
             to="/"
           >
             Home
           </Link>
           <a
-            className={`${dark ? 'text-white/75 hover:bg-white/10 hover:text-white' : 'text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant'} transition-colors font-label-md text-label-md px-2 py-1 rounded`}
+            className={`${dark ? 'text-white/75 hover:bg-white/10 hover:text-white' : forceLight ? 'text-primary hover:text-primary/80' : 'text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant'} transition-colors font-label-md text-label-md font-bold px-2 py-1 rounded`}
             href="#features"
           >
             Features
           </a>
           <a
-            className={`${dark ? 'text-white/75 hover:bg-white/10 hover:text-white' : 'text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant'} transition-colors font-label-md text-label-md px-2 py-1 rounded`}
+            className={`${dark ? 'text-white/75 hover:bg-white/10 hover:text-white' : forceLight ? 'text-primary hover:text-primary/80' : 'text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-variant'} transition-colors font-label-md text-label-md font-bold px-2 py-1 rounded`}
             href="#proctoring"
           >
             How it Works
