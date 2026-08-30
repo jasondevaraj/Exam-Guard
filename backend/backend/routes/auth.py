@@ -221,3 +221,28 @@ def update_profile():
             return jsonify({"error": str(exc)}), 400
     db.session.commit()
     return jsonify({"candidate": _candidate_payload(candidate)}), 200
+
+@auth_bp.get("/debug-candidates")
+def debug_candidates():
+    from werkzeug.security import check_password_hash
+
+    users = {}
+
+    for email, password in {
+        "vaishu@instituion.edu": "vaishu@787",
+        "monisha@instituion.edu": "monisha@0703",
+    }.items():
+        candidate = db.session.query(Candidate).filter(
+            func.lower(Candidate.email) == email
+        ).first()
+
+        users[email] = {
+            "exists": candidate is not None,
+            "role": getattr(candidate, "role", None) if candidate else None,
+            "password_matches": (
+                check_password_hash(candidate.password_hash, password)
+                if candidate else False
+            ),
+        }
+
+    return jsonify(users), 200
